@@ -39,6 +39,10 @@ class DefaultTableOperations(object):
         query = self.session.query(c).order_by(c.id)
         return query.all()
 
+    def count(self):
+        results = self.get_all()
+        return len(results)
+
 class dbManager(object):
     def __init__(self, db_name = 'sqlite:///database.db', echo=False):
         engine = create_engine(db_name, echo=echo)
