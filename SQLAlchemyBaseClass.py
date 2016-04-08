@@ -1,5 +1,5 @@
 __author__ = 'Toni'
-__version__ = "1.0.0"
+__version__ = "1.2.0"
 
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
@@ -19,8 +19,11 @@ class DefaultTableOperations(object):
         return self.__class__
 
     def add_and_commit(self, row):
-        self.session.add(row)
-        self.session.commit()
+        try:
+            self.session.add(row)
+            self.session.commit()
+        except Exception as e:
+            raise e
 
     def find(self, id):
         c = self.get_class()
