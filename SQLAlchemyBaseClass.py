@@ -1,5 +1,5 @@
 __author__ = 'Toni'
-__version__ = "1.3.0"
+__version__ = "1.3.1"
 
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
