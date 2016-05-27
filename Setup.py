@@ -9,4 +9,7 @@ setup(name='SQLAlchemyBaseClass',
       description='SQLAlchemy basic operations',
       author='Toni Nurmi',
       author_email='toni.nurmi@hotmail.com',
+      install_requires=[
+        'sqlalchemy'
+      ]
      )
